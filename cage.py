@@ -26,14 +26,14 @@ count = 0
 
 while (count < N_word):
 	wait_sec = a[random.randrange(1,N_num,1)]
-	print type(wait_sec)	
-	print type(float(wait_sec))	
-
+	wait_sec_int= int(wait_sec)
 	print "Number of Seconds:", wait_sec 
 	print "Random Word", w[random.randrange(0,N_word,1)] 
-	print raw_input("stuffs")	
+	print raw_input("Hit Enter to GO")	
 
-	# for i in xrange(wait_sec,0,-1):
-	# 	time.sleep(1)
-	# 	print i
-	# count = count +1
+	for i in xrange(wait_sec_int, 0, -1):
+		time.sleep(1)
+		print i
+		
+	count = count +1
+	print "DONE"
