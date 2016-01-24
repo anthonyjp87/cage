@@ -7,7 +7,7 @@ f = open('cagenum.csv')
 csv_f = csv.reader(f)
 a = []
 w = []
-
+gameType = ["Words", "Seconds", "Lines"]
 
 for row in csv_f:
 	a.extend(row)
@@ -27,13 +27,15 @@ count = 0
 while (count < N_word):
 	wait_sec = a[random.randrange(1,N_num,1)]
 	wait_sec_int= int(wait_sec)
-	print "Number of Seconds:", wait_sec 
-	print "Random Word", w[random.randrange(0,N_word,1)] 
+	gameType_itt = random.choice(gameType)
+	print "Number of",gameType_itt,":", wait_sec 
+	print "Word", w[random.randrange(0,N_word,1)] 
 	print raw_input("Hit Enter to GO")	
 
-	for i in xrange(wait_sec_int, 0, -1):
-		time.sleep(1)
-		print i
+	if gameType_itt == "Seconds":
+		for i in xrange(wait_sec_int, 0, -1):
+			time.sleep(1)
+			print i
 		
 	count = count +1
 	print "DONE"
