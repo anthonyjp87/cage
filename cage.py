@@ -2,6 +2,7 @@ import numpy as np
 import random
 import csv
 import time
+import sys
 
 f = open('cagenum.csv')
 csv_f = csv.reader(f)
@@ -23,8 +24,23 @@ N_word = len(w)
 N_num = len(a)
 count = 0
 
+#collecting the number fo player
+uNumberofPlayers = int(raw_input("Please enter number of players "))
+# try:
+#     number = int(uNumberofPlayers)
+# except ValueError:
+#     print("Invalid number")	
+#     sys.exit(1)
+
+#creating player array
+uPlayerName = []
+for i in xrange(0, uNumberofPlayers):
+	uPlayerName.append(raw_input("Enter a name:"))
+
+#the game engine
 
 while (count < N_word):
+	print "Player ", random.choice(uPlayerName)
 	wait_sec = a[random.randrange(1,N_num,1)]
 	wait_sec_int= int(wait_sec)
 	gameType_itt = random.choice(gameType)
