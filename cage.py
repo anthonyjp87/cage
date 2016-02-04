@@ -23,8 +23,14 @@ N_num = len(a)
 count = 0
 
 
+while True:
+	try:
+		uNumberofPlayers = int(raw_input("Please enter number of players "))
+		break
+	except ValueError:
+		print "Not a Number, Try again"
+
 #Creating Player Array
-uNumberofPlayers = int(raw_input("Please enter number of players "))
 uPlayerName = []
 for i in xrange(0, uNumberofPlayers):
 	uPlayerName.append(raw_input("Enter a name:"))
