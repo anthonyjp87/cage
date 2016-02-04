@@ -8,7 +8,7 @@ f = open('cagenum.csv')
 csv_f = csv.reader(f)
 a = []
 w = []
-gameType = ["Words", "Lines"]
+gameType = ["Words", "Seconds", "Lines"]
 
 for row in csv_f:
 	a.extend(row)
