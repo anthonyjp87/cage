@@ -44,4 +44,4 @@ while (count < N_word):
 			print i
 			time.sleep(1)
 	count = count +1
-	print "DONE"
+	print "Next"
