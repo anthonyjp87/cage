@@ -8,7 +8,7 @@ f = open('cagenum.csv')
 csv_f = csv.reader(f)
 a = []
 w = []
-gameType = ["Words", "Seconds", "Lines"]
+gameType = ["Words", "Lines"]
 
 for row in csv_f:
 	a.extend(row)
@@ -34,6 +34,9 @@ uNumberofPlayers = int(raw_input("Please enter number of players "))
 #comment
 
 #creating player array
+
+
+
 uPlayerName = []
 for i in xrange(0, uNumberofPlayers):
 	uPlayerName.append(raw_input("Enter a name:"))
@@ -41,7 +44,7 @@ for i in xrange(0, uNumberofPlayers):
 #the game engine
 
 while (count < N_word):
-	print "Player ", random.choice(uPlayerName)
+	print "Player: ", uPlayerName[count%uNumberofPlayers]
 	wait_sec = a[random.randrange(1,N_num,1)]
 	wait_sec_int= int(wait_sec)
 	gameType_itt = random.choice(gameType)
